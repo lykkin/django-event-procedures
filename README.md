@@ -1,34 +1,45 @@
+=======================
 django-event-procedures
 =======================
 
 An event driven code execution system backed by django
 
+Usage:
+======
+COMING SOON
 
 Getting started:
 ===============
 
-run:
-    pip install django-event-procedures
+Install:
 
-in settings:
-    In INSTALLED_APPS add 'event_procedures' as such:
-        INSTALLED_APPS = (
-            ...
-            'event_procedures',
-            ...
-        )
+        $ pip install django-event-procedures
 
-    define SIGNAL_MODULES as a list of modules containing the signals you want
-    For example, if you want want django.core.signals it would look something like
-        SIGNAL_MODULES = [
-            ...
-            'django.core',
-            ...
-        ]
+In settings:
 
-    Register the event registration middleware in your middleware:
-        MIDDLEWARE_CLASSES = (
-            ...
-            'event_procedures.middleware.EventRegistration',
-            ...
-        )
+
+In INSTALLED_APPS add 'event_procedures' as such:
+
+    INSTALLED_APPS = (
+        ...
+        'event_procedures',
+        ...
+    )
+    
+Somewhere in your settings files SIGNAL_MODULES as a list of modules containing 
+the signals you want.
+For example, if you want want django.core.signals it would look something like:
+
+    SIGNAL_MODULES = [
+        ...
+        'django.core',
+        ...
+    ]
+    
+Register the event registration middleware in your middleware:
+
+    MIDDLEWARE_CLASSES = (
+        ...
+        'event_procedures.middleware.EventRegistration',
+        ...
+    )
